@@ -1,4 +1,5 @@
 abstract.tex
+Outline.tex
 introduction.tex
 materials_and_methods.tex
 results.tex
