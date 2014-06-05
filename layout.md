@@ -3,6 +3,7 @@ abstract.tex
 Outline.tex
 introduction.tex
 materials_and_methods.tex
+Statistical Analysis.tex
 results.tex
 discussion.tex
 disclosure.tex
