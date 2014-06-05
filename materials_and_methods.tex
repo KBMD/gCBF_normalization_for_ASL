@@ -14,6 +14,8 @@ Brain structure was assessed from sagittal MP-RAGE acquisitions with voxel size 
 
 \subsection{Image registration and creation of CBF images}
 The 63 frames of the ASL run were rigidly aligned using a validated method (Black et al., 2001) and summed to facilitate later alignment steps. Each frame was smoothed using a Gaussian filter with kernel measuring 7.35 mm (FWHM), and cerebral blood flow (CBF) was computed in each voxel for each tag-control pair (Wang et al., 2003). The summed within-run-aligned EPI images were mutually aligned within each subject and summed, and the resulting image was affine registered to a target image in Talairach and Tournoux space made using validated methods from the structural MR images from these subjects (Black et al., 2004). From this registration, the 31 tag-control-pair CBF images were resampled into atlas space using matrix multiplication to avoid multiple resampling steps, and averaged to create a single atlas-registered CBF image for each ASL run. 
+
+
 Performed motion censoring as per Power et al. One subject was excluded after motion data indicated that there was motion artifact in over 50? percent of frames.
 
 \subsection{Image scaling}
