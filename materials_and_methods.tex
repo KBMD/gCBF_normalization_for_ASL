@@ -17,14 +17,11 @@ The 63 frames of the ASL run were rigidly aligned using a validated method\cite{
 
 Performed motion censoring as per Power et al 2011. (Jon, please describe further). One subject was excluded after motion data indicated that there was motion artifact in over 50? percent of frames.
 
-\subsection{Image scaling}
-\subsubsection{Estimating modal CBF image intensity (``smooth mode'')}
-\sout{Cite Avi if possible for why we chose mode not mean. Jon can add the method for finding the vertex of the parabola, which parabola, etc.} 
-\subsubsection{Proportional (multiplicative) scaling}
-\sout{This sub-sub-section and the next may be appropriate to combine.}
-\subsubsection{Additive scaling}
-\sout{Blah blah blah blah}
-
+\subsection{Image intensity correction}
+\subsubsection{Estimating modal CBF image intensity}
+\sout{Cite Avi if possible for why we chose mode not mean.} The image intensity histograms were constructed with bins 1 unit wide, so that generally the histogram resembled a gaussian distribution with some added noise. We chose to normalize image intensity based on the peak of this distribution (which if there were no noise would be the mode, \textit{i.e.} the most common voxel intensity in the image). Specifically, a custom computer program used the method of least squares to identify the vertex of the parabola that best fit the histogram \sout{describe here which part of the histogram we fit the data to -- I think it was from the lowest bin whose frequency was above a certain percent threshold of the true mode to the highest bin above that same threshold}.
+\subsubsection{Additive and multiplicative intensity correction}
+Each input image was corrected in two ways: multiplicatively (by $50/mode$), and additively (by $50-mode$), so that the modal CBF for every corrected image was 50 mL/hg/min.
 
 \subsection{Defining volumes of interest}
 \begin{itemize}
@@ -34,15 +31,14 @@ Performed motion censoring as per Power et al 2011. (Jon, please describe furthe
 \end{itemize}
 
 \subsection{Statistical analysis}
-To determine activation analysis, we used a two-level, mixed effects approach.  First, for each study subject, changes in rCBF were identified using SPM12b software and a voxelwise general linear model that included task (checkerboard) vs. control (crosshair fixation). A statistical parametic image for each subject was generated from the task contrast and were used as input data for a second-level SPM analysis for a voxelwise general linear model that included a covariate for subject age and sex. Statistical inference was performed at each voxel with a one-sample t test (ie testing across subjects whether the task contrast images are significantly less than or greater than zero). 
-Multiple-comparisons correction was performed at the cluster level with a false discovery rate set at p = 0.05. 
+To determine the effect of correcting for gCBF on task effect, all statistical analyses were performed in triplicate: once on the uncorrected images (before removing the gCBF effect), once with the multiplicatively normalized images and finally with the additively corrected images.
 
-Approximate anatomical locations were provided by the \href{http://www.talairach.org}{Talairach Daemon client}.(Lancaster el at 2000)
+\subsubsection{VOI analysis}
+We used [what statistics] to test for a significant activation in the partial visual cortex VOI.
 
-To determine the effect of correcting for the gCBF on regional analyses, all statistical analyses were performed in triplicate: first, before removing the gCBF effect (unnormalized) and then repeated after removing the gCBF effect by scaling all input images multiplicatively (multiplied to normalize) or proportionally (shifted to normalize), so that the global mean CBF for every image was 50 mL / hg / min.
+\subsubsection{Statistical images}
+To determine activation analysis, we used a two-level, mixed effects approach.  First, for each study subject, changes in rCBF were identified using SPM12b software and a voxelwise general linear model that included task (checkerboard) vs. control (crosshair fixation). A t image for each subject was generated from the task contrast. These t images were used as input for a second-level SPM analysis using a voxelwise general linear model that included a covariate for subject age and a factor for sex. Statistical inference was performed at each voxel with a one-sample t test (\textit{i.e.} testing whether the task contrast images are significantly less than or greater than zero, across subjects). Multiple comparisons correction was performed with the cluster false discovery rate set at p = 0.05. 
 
-
-
-
+Approximate anatomical locations of peaks in the statistical images were provided by the \href{http://www.talairach.org}{Talairach Daemon client}.\cite{20408222}\cite{10912591}
 
 
