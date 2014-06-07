@@ -14,7 +14,6 @@ Brain structure was assessed from sagittal MP-RAGE acquisitions with voxel size 
 \subsection{Image registration and creation of CBF images}
 The 63 frames of the ASL run were rigidly aligned using a validated method\cite{Black_2001} and summed to facilitate later alignment steps. Each frame was smoothed using a Gaussian filter with kernel measuring \sout{7.35 mm} (FWHM), and cerebral blood flow (CBF) was computed in each voxel for each tag-control pair as described.\cite{Wang_2003} The summed, aligned EPI images from each run were mutually aligned within each subject and summed across runs, and the resulting image was affine registered to a target image in Talairach and Tournoux space made using validated methods from the structural MR images from these subjects.\cite{15130735} The registration matrix from this step and the matrices from the within-run mutual registration step were used to resample the 31 tag-control pair CBF images from each run into atlas space using matrix multiplication with a single resampling step. The resulting CBF images in atlas space were averaged to create a single atlas-registered CBF image for each ASL run. 
 
-
 Performed motion censoring as per Power et al 2011. (Jon, please describe further). One subject was excluded after motion data indicated that there was motion artifact in over 50? percent of frames.
 
 \subsection{Image intensity correction}
@@ -24,21 +23,15 @@ Performed motion censoring as per Power et al 2011. (Jon, please describe furthe
 Each input image was corrected in two ways: multiplicatively (by $50/mode$), and additively (by $50-mode$), so that the modal CBF for every corrected image was 50 mL/hg/min.
 
 \subsection{Defining volumes of interest}
-\begin{itemize}
-\item \textit{Whole-brain mask for each subject and their intersection for all subsequent analyses}
-\item \textit{How GM & WM VOIs were defined from Freesurfer}
-\item \textit{How the visual cortex region was defined for extracting the numbers that contributed to the Table.}
-\end{itemize}
+Analysis was limited to voxels that were represented in every image in every subject and were contained in an atlas brain volume, as described previously.\cite{Black_2010} This mask excluded much of the inferior occipital cortex, but an \textit{a priori} partial visual cortex volume of interest (VOI) was defined by . . . . . . . . . . .  \textit{Here, add how GM & WM VOIs were defined from Freesurfer.} For each CBF image, the mean CBF across all voxels in each VOI was used for statistical analyses.
 
 \subsection{Statistical analysis}
 To determine the effect of correcting for gCBF on task effect, all statistical analyses were performed in triplicate: once on the uncorrected images (before removing the gCBF effect), once with the multiplicatively normalized images and finally with the additively corrected images.
 
 \subsubsection{VOI analysis}
-We used [what statistics] to test for a significant activation in the partial visual cortex VOI.
+We tested for a significant activation in the partial visual cortex VOI using \sout{a repeated measures ANOVA}.
 
 \subsubsection{Statistical images}
 To determine activation analysis, we used a two-level, mixed effects approach.  First, for each study subject, changes in rCBF were identified using SPM12b software and a voxelwise general linear model that included task (checkerboard) vs. control (crosshair fixation). A t image for each subject was generated from the task contrast. These t images were used as input for a second-level SPM analysis using a voxelwise general linear model that included a covariate for subject age and a factor for sex. Statistical inference was performed at each voxel with a one-sample t test (\textit{i.e.} testing whether the task contrast images are significantly less than or greater than zero, across subjects). Multiple comparisons correction was performed with the cluster false discovery rate set at p = 0.05. 
 
 Approximate anatomical locations of peaks in the statistical images were provided by the \href{http://www.talairach.org}{Talairach Daemon client}.\cite{20408222}\cite{10912591}
-
-
