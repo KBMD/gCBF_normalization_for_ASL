@@ -8,15 +8,21 @@ The original CBF images contained a reasonable distribution of voxel intensities
 Images normalized additively (third row in Fig. \ref{fig:BlueGreenRed}) present much clearer gray:white contrast on visual inspection. We tested this impression quantitatively using the ratio in each subject of the mean GM CBF to the mean WM CBF. The mean $\pm$ SD ratio for the original CBF images was $MMM \pm SSS$. For the multiplicatively normalized images it was $MMM \pm SSS$, and for the additively normalized images it was $MMM \pm SSS$. These differed significantly ($F_{NN,DD} = FFF, p = .XXX$), with post hoc tests significant for additive vs. original ($t_{DF} = TTT, p = .XXX$), multiplicative vs. original ($t_{DF} = TTT, p = .XXX$) \verb|, and additive vs. multiplicative ($t_{DF} = TTT, p = .XXX$)|.
 
 \subsection{Task activation: \textit{a priori} volume of interest}
-  \begin{itemize} 
-    \item mean change in partial visual VOI (intended as a positive control)
-    \item mean change in WM VOI (intended as a negative control)
-    \item t-test in partial visual VOI (shift50 is slightly better than mult50 or unshifted)
-    \item t-test in WM VOI
-  \end{itemize}
+We examined the effect of visual stimulation in the partial visual cortex VOI (intended as a positive control) and in the whole-brain WM VOI (intended as a negative control). As shown in Table \ref{table:taskVOI}), the statistical significance of the increased rCBF in visual cortex is slightly higher in the additively normalized images, \sout{and blah blah in WM}.
+
+\begin{table}
+\begin{tabular}{lcccc}
+  \textbf{Image set} & \textbf{visual mean change} & \textbf{visual t (XX df)} &        \textbf{WM mean change} & \textbf{WM t (XX df)} \\
+  non-normalized & x.xxx & y.yy & z.zzz & w.ww \\
+  additively normalized & x.xxx & y.yy & z.zzz & w.ww \\
+  multiplicatively normalized & x.xxx & y.yy & z.zzz & w.ww \\
+\end{tabular}
+\caption{\textbf{Task activation with visual stimulation}}
+\label{table:taskVOI}
+\end{table}
 
 \subsection{Task activation: statistical image}
-SPM analyses of visual stimulation found significant clusters even without normalization, though normalization improved the signal (see Table and Supplemental Data).
+SPM analyses of visual stimulation found significant clusters even without normalization, though normalization improved the signal (see Table \ref{table:SPMresults} and Supplemental Data).
 
 \begin{table}
 \begin{tabular}{lccc}
@@ -25,6 +31,6 @@ SPM analyses of visual stimulation found significant clusters even without norma
   additively normalized & x.xxx & yyyy & z.zzz \\
   multiplicatively normalized & x.xxx & yyyy & z.zzz \\
 \end{tabular}
-\caption{Summary of SPM results}
+\caption{\textbf{Summary of SPM results}}
 \label{table:SPMresults}
 \end{table}
