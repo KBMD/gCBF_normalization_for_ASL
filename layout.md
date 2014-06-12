@@ -2,8 +2,8 @@ Authorship Note.tex
 abstract.tex
 introduction.tex
 materials_and_methods.tex
-results.tex
 figures/Kurlan_1988_ref/Kurlan_1988_ref.png
+results.tex
 discussion.tex
 disclosure.tex
 acknowledgement.tex
