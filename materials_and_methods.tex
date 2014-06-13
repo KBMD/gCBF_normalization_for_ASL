@@ -23,17 +23,17 @@ The image intensity histograms were constructed with bins 1 unit wide, so that g
 Each input image was corrected in two ways: multiplicatively (multiplying every voxel in the image by $50/mode$), and additively (adding $50-mode$ to every voxel), so that the modal CBF for every corrected image was 50 (nominal units mL/hg/min).
 
 \subsection{Defining volumes of interest}
-Analysis was limited to voxels that were represented in every image in every subject and were contained in an atlas brain volume, as described previously.\cite{Black_2010} This mask excluded much of the inferior occipital cortex, but a partial visual cortex volume of interest (VOI) was defined from occipital cortex voxels remaining in the mask. For each subject, (total) GM and WM VOIs were defined by \href{https://surfer.nmr.mgh.harvard.edu/}{FreeSurfer}.\cite{Desikan2006968} For each image, the mean CBF across all voxels in each VOI was used for statistical analyses.
+Gray matter (GM), white matter (WM) and visual cortex volumes of interest (VOIs) were defined from each subject's MP-RAGE image by \href{https://surfer.nmr.mgh.harvard.edu/}{FreeSurfer}.\cite{Desikan2006968} VOIs were limited to voxels that were represented in every image in every subject; this step excluded much of the inferior occipital cortex.\cite{Black_2010} 
 
 \subsection{Statistical analysis}
-To determine the effect of correcting for gCBF on task effect, all statistical analyses were performed in triplicate: once on the uncorrected images (before removing the gCBF effect), once with the multiplicatively normalized images and finally with the additively corrected images.
+To determine the effect of correcting for gCBF on task effect, all statistical analyses were performed in triplicate, one for each set of images: uncorrected (before removing the gCBF effect), multiplicatively normalized, and additively corrected.
 
 \subsubsection{VOI analysis}
-We tested for a significant activation in the partial visual cortex VOI using \sout{a repeated measures ANOVA}.
+Mean CBF across all voxels in a VOI was computed from each atlas-registered CBF image. The ratio of GM VOI mean to WM VOI mean was computed for each CBF image and compared across image sets using a repeated measures analysis of variance (ANOVA). Activation in a VOI with visual stimulation was tested for statistical significance in each image set using \sout{a repeated measures ANOVA}. 
 
 \subsubsection{Statistical images}
 To identify regions activated by the visual task, we used a two-level, mixed effects approach.  First, for each study subject, changes in rCBF were identified using SPM12b software and a voxelwise general linear model that included task (checkerboard) vs. control (crosshair fixation). A t image for each subject was generated from the task contrast. These t images were used as input for a second-level SPM analysis using a voxelwise general linear model that included a covariate for subject age and a factor for sex. Statistical inference was performed at each voxel with a one-sample t test (\textit{i.e.} testing whether the task contrast images are significantly less than or greater than zero, across subjects). Multiple comparisons correction was performed with the cluster false discovery rate set at p = 0.05. 
 
 Approximate anatomical locations of peaks in the statistical images were provided by the \href{http://www.talairach.org}{Talairach Daemon client}.\cite{20408222,10912591}
 
-\verb|Jon, see 2 comments on this section.|
+\verb|Jon, see comments on this section.|
