@@ -1,4 +1,3 @@
-Authorship Note.tex
 abstract.tex
 introduction.tex
 materials_and_methods.tex
