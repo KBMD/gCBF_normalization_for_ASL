@@ -16,7 +16,7 @@ The 63 frames of the ASL run were rigidly aligned using a validated method\cite{
 
 \subsection{Image intensity correction}
 \subsubsection{Estimating modal CBF image intensity}
-The image intensity histograms were constructed with bins 1 unit wide, so were not smooth. We chose to normalize image intensity based on the idealized peak of this distribution (which if there were no noise would be the mode, \textit{i.e.} the most common voxel intensity in the image).\cite{Ojemann_1997} Specifically, a custom computer program used the method of least squares to identify the vertex of the parabola that best fit the histogram \sout{describe here which part of the histogram we fit the data to---I think it was from the lowest bin whose frequency was above a certain percent threshold of the true mode to the highest bin above that same threshold}.
+The image intensity histograms were constructed with bins 1 unit wide, so were not smooth. We chose to normalize image intensity based on the idealized peak of this distribution (which if there were no noise would be the mode, \textit{i.e.} the most common voxel intensity in the image).\cite{Ojemann_1997} Specifically, the method of least squares was used to identify the vertex of the parabola that best fit the histogram \sout{describe here which part of the histogram we fit the data to---I think it was from the lowest bin whose frequency was above a certain percent threshold of the true mode to the highest bin above that same threshold}.
 
 \verb|Jon, please correct that last sentence.|
 \subsubsection{Additive and multiplicative intensity correction}
