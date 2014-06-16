@@ -7,4 +7,4 @@ discussion.tex
 disclosure.tex
 acknowledgement.tex
 Supplemental Data.tex
-//smoothed_mode.GIF
+figures/smoothed_mode/smoothed_mode.GIF
