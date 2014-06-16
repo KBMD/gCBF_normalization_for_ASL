@@ -1,6 +1,7 @@
 abstract.tex
 introduction.tex
 materials_and_methods.tex
+/RGB_figure.GIF
 figures/Kurlan_1988_ref/Kurlan_1988_ref.png
 results.tex
 discussion.tex
