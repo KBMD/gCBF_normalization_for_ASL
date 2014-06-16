@@ -1,4 +1,4 @@
-gCBF_normalization\_for\_ASL
+gCBF\_normalization\_for\_ASL
 ==========================
 
 https://www.authorea.com/users/4510/articles/7658/_show_article
